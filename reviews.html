@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reviews — Naayina Ichina Ungaram</title>
+<meta name="description" content="Read and write reviews of Premamma’s autobiography.">
+<meta property="og:title" content="Reviews — Naayina Ichina Ungaram">
+<meta property="og:description" content="Read and write reviews of Premamma’s autobiography.">
+<meta property="og:image" content="assets/img/cover-small.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120D08">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="nav">
+    <nav class="nav-links" aria-label="Main">
+      <a href="story.html">Her Story</a>
+<a href="book.html">The Book</a>
+<a href="release.html">Book Release</a>
+    </nav>
+    <a class="brand" href="index.html">Premamma<small>ప్రేమమ్మ</small></a>
+    <nav class="nav-links nav-right" aria-label="More">
+      <a href="gallery.html">Gallery</a>
+<a href="reviews.html" aria-current="page">Reviews</a>
+<a href="contact.html">Contact</a>
+      <a class="nav-cta" href="book.html#copies">Get the Book</a>
+    </nav>
+    <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu">
+    <button class="menu-btn close" id="menu-close" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <a href="index.html">Home</a>
+<a href="story.html">Her Story</a>
+<a href="book.html">The Book</a>
+<a href="release.html">Book Release</a>
+<a href="gallery.html">Gallery</a>
+<a href="reviews.html" aria-current="page">Reviews</a>
+<a href="contact.html">Contact</a>
+  </nav>
+</header>
+<main id="main">
+
+<section class="banner">
+  <picture><source media="(max-width:700px)" srcset="assets/img/banner-small.jpg"><img src="assets/img/banner.jpg" alt="Premamma smiling, wearing gold-rimmed glasses and a pale striped saree, seated against a teal wall" width="1448" height="1086" fetchpriority="high"></picture>
+  <div class="banner-text"><div class="banner-inner">
+  <p class="eyebrow">Readers’ Voices</p>
+  <h1 class="display h-xl">Reviews</h1>
+  <p class="body" id="review-summary" style="color:var(--muted)">What readers say about Naayina Ichina Ungaram</p>
+</div></div>
+</section>
+
+<section class="section" id="write" style="padding-top:60px">
+  <div class="narrow" style="max-width:860px">
+    <form class="form-card stack" data-api="/api/reviews" data-success="Thank you! Your review will appear once the family has read it." novalidate>
+      <div class="center stack" style="gap:10px;align-items:center">
+        <h2 class="display h-m">Share your thoughts</h2>
+        <p class="body">How did Premamma’s story touch you?</p>
+      </div>
+      <fieldset style="border:0;padding:0;margin:0;text-align:center">
+        <legend class="eyebrow" style="color:var(--muted-2);margin:0 auto 8px;font-size:12px;letter-spacing:4px">Your rating *</legend>
+        <div class="rating">
+          <input type="radio" id="r5" name="rating" value="5" required><label for="r5" aria-label="5 stars">★</label>
+          <input type="radio" id="r4" name="rating" value="4"><label for="r4" aria-label="4 stars">★</label>
+          <input type="radio" id="r3" name="rating" value="3"><label for="r3" aria-label="3 stars">★</label>
+          <input type="radio" id="r2" name="rating" value="2"><label for="r2" aria-label="2 stars">★</label>
+          <input type="radio" id="r1" name="rating" value="1"><label for="r1" aria-label="1 star">★</label>
+        </div>
+      </fieldset>
+      <div class="grid-2">
+        <label class="field">Name *<input type="text" name="name" required maxlength="80" autocomplete="name"></label>
+        <label class="field">City<input type="text" name="city" maxlength="60" autocomplete="address-level2"></label>
+      </div>
+      <label class="field">Email (not shown publicly)<input type="email" name="email" maxlength="120" autocomplete="email"></label>
+      <label class="field">Your review *<textarea name="review" rows="5" required minlength="10" maxlength="3000"></textarea></label>
+      <label class="hp" aria-hidden="true">Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <label class="check"><input type="checkbox" name="consent" value="yes" required><span>I agree to my review being published on this website. My IP address is saved with it to prevent spam and misuse (<a href="privacy.html">privacy</a>).</span></label>
+      <button type="submit" class="btn btn-solid" style="align-self:center">Submit review</button>
+      <p class="form-status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section style="padding:0 0 130px">
+  <div class="wrap stack" style="gap:36px">
+    <h2 class="display h-m">From our readers</h2>
+    <div class="review-wall" id="review-list" aria-live="polite"><div class="empty">Loading reviews…</div></div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="stack" style="gap:18px">
+        <p class="display h-l">Write to<br><em>Premamma</em></p>
+        <a class="email-link" href="mailto:rspremamma@gmail.com">rspremamma@gmail.com</a>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-ghost" href="reviews.html">Write a review</a>
+        <a class="btn btn-solid" href="contact.html">Send a message</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Premamma · <span class="te">ప్రేమమ్మ</span> · <a href="mailto:rspremamma@gmail.com">rspremamma@gmail.com</a></span>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a><a href="story.html">Her Story</a><a href="book.html">The Book</a><a href="release.html">Book Release</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

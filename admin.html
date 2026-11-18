@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin — Premamma website</title>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0}
+  .tabs button{background:transparent;color:var(--gold);border:1px solid var(--gold);padding:12px 20px;font:600 12px var(--sans);letter-spacing:2px;text-transform:uppercase;cursor:pointer;min-height:44px}
+  .tabs button[aria-pressed="true"]{background:var(--gold);color:var(--bg)}
+  .item{border:1px solid var(--line);background:var(--bg-2);padding:24px 28px;margin-bottom:16px;display:flex;flex-direction:column;gap:10px}
+  .item .meta{font-size:13px;color:var(--muted-2);display:flex;flex-wrap:wrap;gap:6px 18px}
+  .item .meta b{color:var(--cream);font-weight:500}
+  .item .text{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--cream);margin:0;white-space:pre-line}
+  .item .actions{display:flex;flex-wrap:wrap;gap:10px}
+  .item .actions .btn{padding:10px 18px;font-size:11px;min-height:40px}
+  .danger{border-color:#C46A4A!important;color:#F2A07B!important}
+  .danger:hover{background:#C46A4A!important;color:var(--bg)!important}
+</style>
+</head>
+<body>
+<main class="wrap" style="padding-top:60px;padding-bottom:80px">
+  <p class="eyebrow">Premamma website</p>
+  <h1 class="display h-m" style="margin-top:10px">Reviews &amp; messages</h1>
+
+  <form id="login" class="form-card stack" style="max-width:520px;margin-top:40px">
+    <label class="field">Admin key<input type="password" id="key" required autocomplete="current-password"></label>
+    <button class="btn btn-solid" type="submit" style="align-self:flex-start">Open</button>
+    <p class="form-status" id="login-status" role="status"></p>
+  </form>
+
+  <section id="panel" hidden>
+    <div class="tabs" role="group" aria-label="Show">
+      <button type="button" data-tab="pending" aria-pressed="true">Waiting (<span id="c-pending">0</span>)</button>
+      <button type="button" data-tab="approved" aria-pressed="false">Published (<span id="c-approved">0</span>)</button>
+      <button type="button" data-tab="messages" aria-pressed="false">Messages (<span id="c-messages">0</span>)</button>
+      <button type="button" id="csv" style="margin-left:auto">Download CSV</button>
+      <button type="button" id="refresh">Refresh</button>
+      <button type="button" id="logout">Lock</button>
+    </div>
+    <p class="form-status" id="status" role="status"></p>
+    <div id="list"></div>
+  </section>
+</main>
+<script>
+(function(){
+  var KEY_NAME='premamma-admin-key', key=sessionStorage.getItem(KEY_NAME)||'', data=null, tab='pending';
+  var $=function(id){return document.getElementById(id)};
+  function api(method, body){
+    return fetch('/api/admin',{method:method,headers:{'Content-Type':'application/json','x-admin-key':key},body:body?JSON.stringify(body):undefined,cache:'no-store'})
+      .then(function(r){return r.json().then(function(j){if(!r.ok)throw new Error(j.error||'Error');return j;});});
+  }
+  function load(){
+    $('status').textContent='Loading…';
+    return api('GET').then(function(d){
+      data=d; $('login').hidden=true; $('panel').hidden=false; $('status').textContent='';
+      ['pending','approved','messages'].forEach(function(k){$('c-'+k).textContent=d[k].length;});
+      render();
+    }).catch(function(e){
+      sessionStorage.removeItem(KEY_NAME); $('panel').hidden=true; $('login').hidden=false;
+      $('login-status').className='form-status err'; $('login-status').textContent=e.message;
+    });
+  }
+  function el(tag, cls, text){var e=document.createElement(tag); if(cls)e.className=cls; if(text!=null)e.textContent=text; return e;}
+  function metaRow(parts){var m=el('div','meta'); parts.forEach(function(p){if(!p[1])return; var s=el('span'); s.appendChild(document.createTextNode(p[0]+': ')); s.appendChild(el('b',null,p[1])); m.appendChild(s);}); return m;}
+  function when(iso){try{return new Date(iso).toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'});}catch(e){return iso;}}
+  function place(v){return [v.city,v.region,v.country].filter(Boolean).join(', ');}
+  function action(label, act, id, danger){
+    var b=el('button','btn '+(danger?'btn-ghost danger':'btn-ghost'),label); b.type='button';
+    b.addEventListener('click',function(){
+      if(danger && !confirm('Delete this permanently?')) return;
+      b.disabled=true; api('POST',{action:act,id:id}).then(load).catch(function(e){$('status').className='form-status err';$('status').textContent=e.message;b.disabled=false;});
+    });
+    return b;
+  }
+  function render(){
+    document.querySelectorAll('[data-tab]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-tab')===tab?'true':'false');});
+    var list=$('list'); list.innerHTML='';
+    var items=data[tab];
+    if(!items.length){list.appendChild(el('div','empty','Nothing here yet.'));return;}
+    items.forEach(function(it){
+      var v=it.visitor||{}, card=el('article','item');
+      if(tab==='messages'){
+        card.appendChild(metaRow([['From',it.name],['Contact',it.contact],['About',it.subject],['Sent',when(it.createdAt)]]));
+        card.appendChild(el('p','text',it.message));
+      } else {
+        card.appendChild(metaRow([['Rating','★'.repeat(it.rating)],['Name',it.name],['City',it.city],['Email',it.email],['Sent',when(it.createdAt)]]));
+        card.appendChild(el('p','text',it.review));
+      }
+      card.appendChild(metaRow([['IP address',v.ip],['Location (approx.)',place(v)],['Browser',v.userAgent]]));
+      var a=el('div','actions');
+      if(tab==='pending'){a.appendChild(action('Publish','approve',it.id)); a.appendChild(action('Delete','delete-review',it.id,true));}
+      if(tab==='approved'){a.appendChild(action('Unpublish','unpublish',it.id)); a.appendChild(action('Delete','delete-review',it.id,true));}
+      if(tab==='messages'){a.appendChild(action('Delete','delete-message',it.id,true));}
+      card.appendChild(a); list.appendChild(card);
+    });
+  }
+  function csv(){
+    var rows=[['type','status','date','name','city','email_or_contact','rating','text','ip','location','browser']];
+    function q(s){s=String(s==null?'':s);return '"'+s.replace(/"/g,'""')+'"';}
+    data.pending.concat(data.approved).forEach(function(r){var v=r.visitor||{};rows.push(['review',r.status,r.createdAt,r.name,r.city,r.email,r.rating,r.review,v.ip,place(v),v.userAgent]);});
+    data.messages.forEach(function(m){var v=m.visitor||{};rows.push(['message',m.subject,m.createdAt,m.name,'',m.contact,'',m.message,v.ip,place(v),v.userAgent]);});
+    var blob=new Blob(['﻿'+rows.map(function(r){return r.map(q).join(',');}).join('\r\n')],{type:'text/csv'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='premamma-reviews-and-messages.csv'; a.click();
+  }
+  $('login').addEventListener('submit',function(e){e.preventDefault(); key=$('key').value; sessionStorage.setItem(KEY_NAME,key); load();});
+  document.querySelectorAll('[data-tab]').forEach(function(b){b.addEventListener('click',function(){tab=b.getAttribute('data-tab');render();});});
+  $('refresh').addEventListener('click',load);
+  $('csv').addEventListener('click',csv);
+  $('logout').addEventListener('click',function(){sessionStorage.removeItem(KEY_NAME);location.reload();});
+  if(key) load();
+})();
+</script>
+</body>
+</html>

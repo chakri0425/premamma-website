@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Premamma//Book Release//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:premamma-book-release-20261206@premamma
+DTSTAMP:20261117T000000Z
+DTSTART:20261206T120000Z
+DTEND:20261206T150000Z
+SUMMARY:Book release: Naayina Ichina Ungaram by Premamma
+DESCRIPTION:Release of Naayina Ichina Ungaram\, the autobiography of Premamma\, with a foreword by Dr. R. S. Praveen Kumar.
+LOCATION:Centre for Dalit Studies\, SPR & D Hills\, Rehmat Nagar Division\, Mothi Nagar\, Borabanda\, Hyderabad 500018\, Telangana
+END:VEVENT
+END:VCALENDAR

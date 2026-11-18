@@ -1,0 +1,10 @@
+{
+  "name": "premamma-website",
+  "private": true,
+  "type": "module",
+  "description": "Website for Premamma and her autobiography Naayina Ichina Ungaram",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@vercel/blob": "^2.9.0"
+  }
+}
