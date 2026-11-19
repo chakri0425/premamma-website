@@ -57,11 +57,11 @@ def frame(yr, k, t, d, img=None, pos='center'):
 
 REEL = '\n'.join([
     frame('1942', 'Chapter I', 'Born in Parumanchala', 'A poor, oppressed family in Kurnool district.'),
-    frame('Girlhood', 'Chapter II', 'Against every odd', 'She kept studying through poverty and discrimination.'),
-    frame('Service', 'Chapter III', 'Door to door', 'As a government teacher, she brought out-of-school children back to class.', 'portrait-blue.jpg', 'center 15%'),
-    frame('Family', 'Chapter IV', 'A mother’s resolve', 'Through loss, she raised an IPS officer, a professor and a doctor.'),
-    frame('Today', 'Chapter V', 'Alampur', 'On the Tungabhadra, still helping poor children study.', 'portrait-teal.jpg'),
-    frame('2026', 'Chapter VI', 'Her own words', 'Her autobiography, Naayina Ichina Ungaram.', 'cover-small.jpg', 'center 20%'),
+    frame('Girlhood', 'Chapter II', 'Against every odd', 'She kept studying through poverty and discrimination.', 'old-photograph-small.jpg', 'center 30%'),
+    frame('Service', 'Chapter III', 'Door to door', 'As a government teacher, she brought out-of-school children back to class.', 'with-children-small.jpg', '35% center'),
+    frame('Family', 'Chapter IV', 'A mother’s resolve', 'Through loss, she raised an IPS officer, a professor and a doctor.', 'with-family-small.jpg', '20% center'),
+    frame('Today', 'Chapter V', 'Alampur', 'On the Tungabhadra, still helping poor children study.', 'tungabhadra-small.jpg', '70% center'),
+    frame('2026', 'Chapter VI', 'Her own words', 'Her autobiography, Naayina Ichina Ungaram.', 'writing-small.jpg', '40% center'),
 ])
 
 # ---------------------------------------------------------------- HOME
@@ -96,7 +96,7 @@ HOME = f'''
   </div>
 </section>
 
-<section class="quote-band px bg-quote">
+<section class="quote-band px bg-writing">
   <svg width="46" height="36" viewBox="0 0 46 36" fill="#D9A55B" aria-hidden="true" style="margin:0 auto 28px"><path d="M0 36V20C0 9 6 2 18 0l2 5C13 7 10 11 10 17h9v19zm26 0V20c0-11 6-18 18-20l2 5c-7 2-10 6-10 12h9v19z"/></svg>
   <p class="q te" lang="te">{TAGLINE_TE}</p>
   <p class="body" style="max-width:820px;margin:26px auto 0;font-style:italic">{TAGLINE_EN}</p>
@@ -132,6 +132,20 @@ HOME = f'''
     <div class="stack">
       <p class="eyebrow" style="color:var(--muted-2)">Counting down</p>
       {COUNTDOWN}
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-bottom:0">
+  <div class="wrap stack" style="gap:36px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px">
+      <div class="stack" style="gap:12px"><p class="eyebrow">Moments</p><h2 class="display h-l">Her life <em>today</em></h2></div>
+      <a class="btn btn-ghost" href="gallery.html">Open the gallery</a>
+    </div>
+    <div class="moments">
+      <a href="gallery.html" class="m-big"><img src="assets/img/with-children.jpg" alt="Premamma reading a Telugu book with two young children" loading="lazy"><span>Reading with children</span></a>
+      <a href="gallery.html"><img src="assets/img/tungabhadra-small.jpg" alt="Premamma in a blue saree by the Tungabhadra river, temples behind her" loading="lazy"><span>By the Tungabhadra</span></a>
+      <a href="gallery.html"><img src="assets/img/with-family-small.jpg" alt="Premamma laughing with family members outside a house" loading="lazy"><span>With family</span></a>
     </div>
   </div>
 </section>
@@ -181,20 +195,22 @@ STORY = f'''
   </div>
 </section>
 
+<section class="photo-band"><img src="assets/img/memories.jpg" alt="Premamma looking at an old framed photograph of herself" loading="lazy"></section>
+
 <section style="background:var(--bg-2);border-top:1px solid var(--bg-3);border-bottom:1px solid var(--bg-3)">
   <div class="wrap section row" style="align-items:flex-start">
     <div class="stack timeline-col" style="position:sticky;top:120px">
       <p class="eyebrow">Her Journey</p>
       <h2 class="display h-l">From Parumanchala<br><em>to Alampur</em></h2>
-      <img src="assets/img/portrait-teal.jpg" alt="Premamma smiling, seated against a teal wall" loading="lazy" style="margin-top:20px;filter:sepia(.15)">
+      <img src="assets/img/old-photograph.jpg" alt="Premamma seated by a window, holding a framed black-and-white photograph of her younger self" loading="lazy" style="margin-top:20px">
     </div>
     <div class="timeline">
       <div class="tl"><p class="yr">1942</p><p class="t">Born in Parumanchala</p><p class="d">Into a poor, oppressed family in Nandikotkur mandal, Kurnool district.</p></div>
       <div class="tl"><p class="yr">Girlhood</p><p class="t">Studying against every odd</p><p class="d">At a time when girls rarely went to school, she kept going through poverty and discrimination.</p></div>
-      <div class="tl"><p class="yr">Government service</p><p class="t">A teacher who went door to door</p><p class="d">She found children who weren’t in school and enrolled them, supported her younger brothers’ studies, and taught tuitions.</p></div>
-      <div class="tl"><p class="yr">Motherhood</p><p class="t">Through loss, three futures</p><p class="d">A mother of four who lost one child, she raised an IPS officer, a professor and a doctor — and helped neighbours’ children study too.</p></div>
-      <div class="tl"><p class="yr">Today</p><p class="t">Alampur, on the Tungabhadra</p><p class="d">Retired, she still helps poor children in Jogulamba Gadwal district who want to learn.</p></div>
-      <div class="tl" style="padding-bottom:0"><p class="yr">2026</p><p class="t">Her story, in her words</p><p class="d">Her autobiography, <a href="book.html">Naayina Ichina Ungaram</a>, is released on 6 December 2026.</p></div>
+      <div class="tl"><p class="yr">Government service</p><p class="t">A teacher who went door to door</p><p class="d">She found children who weren’t in school and enrolled them, supported her younger brothers’ studies, and taught tuitions.</p><img class="tl-img" src="assets/img/with-children-small.jpg" alt="Premamma reading with two children in a classroom" loading="lazy"></div>
+      <div class="tl"><p class="yr">Motherhood</p><p class="t">Through loss, three futures</p><p class="d">A mother of four who lost one child, she raised an IPS officer, a professor and a doctor — and helped neighbours’ children study too.</p><img class="tl-img" src="assets/img/with-family-small.jpg" alt="Premamma laughing with her family" loading="lazy"></div>
+      <div class="tl"><p class="yr">Today</p><p class="t">Alampur, on the Tungabhadra</p><p class="d">Retired, she still helps poor children in Jogulamba Gadwal district who want to learn.</p><img class="tl-img" src="assets/img/tungabhadra-small.jpg" alt="Premamma by the Tungabhadra river" loading="lazy"></div>
+      <div class="tl" style="padding-bottom:0"><p class="yr">2026</p><p class="t">Her story, in her words</p><p class="d">Her autobiography, <a href="book.html">Naayina Ichina Ungaram</a>, is released on 6 December 2026.</p><img class="tl-img" src="assets/img/writing-small.jpg" alt="Premamma writing in a notebook at a desk" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -233,6 +249,7 @@ BOOK = f'''
       <h2 class="display h-m" style="margin-top:20px">What the book holds</h2>
       <p class="body">This is Premamma’s life, told by Premamma: a childhood in Parumanchala in a family pushed to the margins; the fight to keep studying when girls were kept at home; a working life spent bringing other children into classrooms; the grief of losing a child and the determination that carried her other three to become an IPS officer, a professor and a doctor.</p>
       <p class="body">It is, above all, a book about what education can do — not for one person, but for a family, and for everyone that family touches.</p>
+      <figure style="margin:16px 0 0"><img src="assets/img/with-her-book.jpg" alt="Premamma holding her book Naayina Ichina Ungaram, a ring on her finger" loading="lazy"><figcaption class="eyebrow" style="color:var(--muted-2);margin-top:12px;letter-spacing:3px">Premamma with her book</figcaption></figure>
     </div>
   </div>
 </section>
@@ -315,6 +332,13 @@ GALLERY = f'''
 <section class="section" style="padding-top:70px">
   <div class="wrap">
     <div class="gallery">
+      {gitem('with-children.jpg', 'Premamma reading a Telugu book with two young children', 'Reading with children')}
+      {gitem('old-photograph.jpg', 'Premamma holding a framed photograph of her younger self', 'A photograph from younger days')}
+      {gitem('tungabhadra.jpg', 'Premamma in a blue saree by the Tungabhadra river with temples behind', 'By the Tungabhadra')}
+      {gitem('writing.jpg', 'Premamma writing in a notebook at a desk with school books', 'Writing')}
+      {gitem('with-family.jpg', 'Premamma laughing with family members', 'With family')}
+      {gitem('with-her-book.jpg', 'Premamma holding her book', 'With her book')}
+      {gitem('memories.jpg', 'Premamma looking at an old framed photograph', 'Memories')}
       {gitem('cover.jpg', 'Book cover of Naayina Ichina Ungaram', 'The book cover')}
       {gitem('portrait-teal.jpg', 'Premamma smiling, seated against a teal wall', 'Premamma at home')}
       {gitem('portrait-blue.jpg', 'Premamma in a blue silk saree with a gold border', 'Premamma')}
