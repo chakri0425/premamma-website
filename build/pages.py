@@ -35,12 +35,12 @@ COUNTDOWN = '''<div class="count" data-countdown aria-live="polite">
 MAPS = 'https://www.google.com/maps/search/?api=1&query=Sundarayya+Vignana+Kendram%2C+Bagh+Lingampally%2C+Hyderabad'
 
 GUESTS = [
-    ('Chief Guest', 'Juluri Gouri Shankar', 'Former Chairman, Telangana Sahitya Akademi'),
+    ('Chief Guest', 'Juloori Gouri Shankar', 'Former Chairman, Telangana Sahitya Akademi'),
     ('Guest of Honour', 'Dr. Sangisetty Srinivas', 'Telugu historian, writer, columnist, activist and literary researcher'),
     ('Guest of Honour', 'Dr. Gogu Shyamala', 'Philosopher, poet and prolific story writer'),
     ('Guest of Honour', 'Kakarla Sajaya', 'Independent journalist, writer and social activist'),
     ('Guest of Honour', 'Dr. Jannu Paranjyothi', 'Noted educationist, psychologist and author'),
-    ('Presided by', 'Dr. Pasunoori Ravinder', ''),
+    ('Presided by', 'Dr. Pasunoori Ravinder', 'Kendra Sahitya Akademi Awardee'),
 ]
 
 
@@ -126,7 +126,7 @@ HOME = f'''
     <div class="stack">
       <p class="eyebrow">Book Release</p>
       <h2 class="display h-m">Sunday, 6 December 2026 · <em>5:30 pm</em></h2>
-      <p class="body">Sundarayya Vignana Kendram, Bagh Lingampally, New Nallakunta, Hyderabad. Chief guest Juluri Gouri Shankar, former Chairman of the Telangana Sahitya Akademi; presided by Dr. Pasunoori Ravinder.</p>
+      <p class="body">Sundarayya Vignana Kendram, Bagh Lingampally, New Nallakunta, Hyderabad. Chief guest Juloori Gouri Shankar, former Chairman of the Telangana Sahitya Akademi; presided by Dr. Pasunoori Ravinder.</p>
       <div class="btn-row"><a class="btn btn-solid" href="release.html">Event details</a><a class="btn btn-ghost" href="assets/release.ics" download>Add to calendar</a></div>
     </div>
     <div class="stack">
@@ -304,6 +304,18 @@ RELEASE = f'''
   </div>
 </section>
 
+<section class="section-sm" style="background:var(--bg-2);border-top:1px solid var(--bg-3)">
+  <div class="wrap row">
+    <div class="stack">
+      <p class="eyebrow">The invitation</p>
+      <h2 class="display h-m">Share it with<br><em>friends and family</em></h2>
+      <p class="body">Everyone is welcome. Tap the invitation to see it full size, or save it to share.</p>
+      <div class="btn-row"><a class="btn btn-ghost" href="assets/img/invitation-new.jpg" download="Premamma-Book-Release-Invitation.jpg">Download invitation</a></div>
+    </div>
+    <div><a href="assets/img/invitation-new.jpg"><img src="assets/img/invitation-new.jpg" alt="Book release invitation: Naayina Ichina Ungaram by Premamma, foreword by Dr. R. S. Praveen Kumar. Sunday 6 December 2026 at 5:30 pm, Sundarayya Vignana Kendram, Bagh Lingampally, New Nallakunta, Hyderabad" loading="lazy" style="width:100%;max-width:520px;margin:0 auto;box-shadow:0 30px 60px rgba(0,0,0,.5)"></a></div>
+  </div>
+</section>
+
 '''
 
 # ---------------------------------------------------------------- GALLERY
@@ -329,6 +341,7 @@ GALLERY = f'''
       {gitem('with-her-book.jpg', 'Premamma holding her book', 'With her book')}
       {gitem('memories.jpg', 'Premamma looking at an old framed photograph', 'Memories')}
       {gitem('cover.jpg', 'Book cover of Naayina Ichina Ungaram', 'The book cover')}
+      {gitem('invitation-new.jpg', 'Book release invitation, 6 December 2026, Sundarayya Vignana Kendram, Hyderabad', 'Release invitation')}
       {gitem('portrait-teal.jpg', 'Premamma smiling, seated against a teal wall', 'Premamma at home')}
       {gitem('portrait-blue.jpg', 'Premamma in a blue silk saree with a gold border', 'Premamma')}
     </div>
