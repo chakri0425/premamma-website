@@ -32,7 +32,7 @@ COUNTDOWN = '''<div class="count" data-countdown aria-live="polite">
   <div><p class="n" data-m>–</p><p class="l">Minutes</p></div>
 </div>'''
 
-MAPS = 'https://www.google.com/maps/search/?api=1&query=Centre+for+Dalit+Studies%2C+Mothi+Nagar%2C+Borabanda%2C+Hyderabad+500018'
+MAPS = 'https://www.google.com/maps/search/?api=1&query=Sundarayya+Vignana+Kendram%2C+Bagh+Lingampally%2C+Hyderabad'
 
 GUESTS = [
     ('Chief Guest', 'Juluri Gouri Shankar', 'Former Chairman, Telangana Sahitya Akademi'),
@@ -126,7 +126,7 @@ HOME = f'''
     <div class="stack">
       <p class="eyebrow">Book Release</p>
       <h2 class="display h-m">Sunday, 6 December 2026 · <em>5:30 pm</em></h2>
-      <p class="body">Centre for Dalit Studies, Mothi Nagar, Borabanda, Hyderabad. Chief guest Juluri Gouri Shankar, former Chairman of the Telangana Sahitya Akademi; presided by Dr. Pasunoori Ravinder.</p>
+      <p class="body">Sundarayya Vignana Kendram, Bagh Lingampally, New Nallakunta, Hyderabad. Chief guest Juluri Gouri Shankar, former Chairman of the Telangana Sahitya Akademi; presided by Dr. Pasunoori Ravinder.</p>
       <div class="btn-row"><a class="btn btn-solid" href="release.html">Event details</a><a class="btn btn-ghost" href="assets/release.ics" download>Add to calendar</a></div>
     </div>
     <div class="stack">
@@ -271,7 +271,7 @@ BOOK = f'''
     <div class="event-card stack">
       <p class="eyebrow" style="color:var(--muted-2)">Release in</p>
       {COUNTDOWN}
-      <p class="body">Centre for Dalit Studies, Mothi Nagar, Borabanda, Hyderabad · 5:30 pm</p>
+      <p class="body">Sundarayya Vignana Kendram, Bagh Lingampally, Hyderabad · 5:30 pm</p>
     </div>
   </div>
 </section>
@@ -292,7 +292,7 @@ RELEASE = f'''
   <div class="wrap row" style="align-items:flex-start">
     <div class="event-card stack">
       <div><p class="eyebrow">Date &amp; time</p><p class="display h-m" style="margin-top:10px">Sunday, 6 December 2026</p><p class="lead" style="color:var(--gold-soft);margin-top:6px">5:30 pm</p></div>
-      <div><p class="eyebrow">Venue</p><p class="body" style="color:var(--cream);margin-top:10px;font-size:19px">Centre for Dalit Studies<br>SPR &amp; D Hills, Rehmat Nagar Division,<br>Mothi Nagar, Borabanda,<br>Hyderabad – 500018, Telangana</p></div>
+      <div><p class="eyebrow">Venue</p><p class="body" style="color:var(--cream);margin-top:10px;font-size:19px">Sundarayya Vignana Kendram<br>Bagh Lingampally, New Nallakunta,<br>Hyderabad, Telangana</p></div>
       {COUNTDOWN}
       <div class="btn-row"><a class="btn btn-solid" href="assets/release.ics" download>Add to calendar</a><a class="btn btn-ghost" href="{MAPS}" target="_blank" rel="noopener">Get directions ↗</a></div>
     </div>
@@ -304,17 +304,6 @@ RELEASE = f'''
   </div>
 </section>
 
-<section class="section-sm" style="background:var(--bg-2);border-top:1px solid var(--bg-3)">
-  <div class="wrap row">
-    <div class="stack">
-      <p class="eyebrow">The invitation</p>
-      <h2 class="display h-m">Share it with<br><em>friends and family</em></h2>
-      <p class="body">Everyone is welcome. Tap the invitation to see it full size, or save it to share.</p>
-      <div class="btn-row"><a class="btn btn-ghost" href="assets/img/invitation.jpg" download="Premamma-Book-Release-Invitation.jpg">Download invitation</a></div>
-    </div>
-    <div><a href="assets/img/invitation.jpg"><img src="assets/img/invitation.jpg" alt="Book release invitation: Naayina Ichina Ungaram by Premamma, Sunday 6 December 2026 at 5:30 pm, Centre for Dalit Studies, Borabanda, Hyderabad" loading="lazy" style="width:100%;max-width:520px;margin:0 auto;box-shadow:0 30px 60px rgba(0,0,0,.5)"></a></div>
-  </div>
-</section>
 '''
 
 # ---------------------------------------------------------------- GALLERY
@@ -342,7 +331,6 @@ GALLERY = f'''
       {gitem('cover.jpg', 'Book cover of Naayina Ichina Ungaram', 'The book cover')}
       {gitem('portrait-teal.jpg', 'Premamma smiling, seated against a teal wall', 'Premamma at home')}
       {gitem('portrait-blue.jpg', 'Premamma in a blue silk saree with a gold border', 'Premamma')}
-      {gitem('invitation.jpg', 'Book release invitation, 6 December 2026', 'Release invitation')}
     </div>
     <p class="body center" style="margin-top:40px">Photos from the book release will be added here after 6 December.</p>
   </div>
@@ -466,7 +454,7 @@ PAGES = [
          cur='index.html', body=HOME),
     dict(fname='story.html', title='Her Story — Premamma', desc='From Parumanchala to Alampur: the life of Premamma, in English and Telugu.', cur='story.html', body=STORY),
     dict(fname='book.html', title='Naayina Ichina Ungaram — the autobiography of Premamma', desc='Naayina Ichina Ungaram (The Ring My Father Gave), Premamma’s autobiography in Telugu, with a foreword by Dr. R. S. Praveen Kumar.', cur='book.html', body=BOOK),
-    dict(fname='release.html', title='Book Release, 6 December 2026 — Premamma', desc='Release of Naayina Ichina Ungaram by Premamma: Sunday 6 December 2026, 5:30 pm, Centre for Dalit Studies, Borabanda, Hyderabad.', cur='release.html', body=RELEASE),
+    dict(fname='release.html', title='Book Release, 6 December 2026 — Premamma', desc='Release of Naayina Ichina Ungaram by Premamma: Sunday 6 December 2026, 5:30 pm, Sundarayya Vignana Kendram, Bagh Lingampally, Hyderabad.', cur='release.html', body=RELEASE),
     dict(fname='gallery.html', title='Gallery — Premamma', desc='Photos of Premamma and her book.', cur='gallery.html', body=GALLERY),
     dict(fname='reviews.html', title='Reviews — Naayina Ichina Ungaram', desc='Read and write reviews of Premamma’s autobiography.', cur='reviews.html', body=REVIEWS),
     dict(fname='contact.html', title='Contact — Premamma', desc='Send a message to Premamma and her family.', cur='contact.html', body=CONTACT),
