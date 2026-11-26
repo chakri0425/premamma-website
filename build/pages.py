@@ -56,7 +56,7 @@ def frame(yr, k, t, d, img=None, pos='center'):
 
 
 REEL = '\n'.join([
-    frame('1942', 'Chapter I', 'Born in Parumanchala', 'A poor, oppressed family in Kurnool district.'),
+    frame('1942', 'Chapter I', 'Born in Parumanchala', 'A small village in Kurnool district, a poor and oppressed family — and a girl who would one day teach others to read.', 'parumanchala-small.jpg', '70% 60%'),
     frame('Girlhood', 'Chapter II', 'Against every odd', 'She kept studying through poverty and discrimination.', 'old-photograph-small.jpg', 'center 30%'),
     frame('Service', 'Chapter III', 'Door to door', 'As a government teacher, she brought out-of-school children back to class.', 'with-children-small.jpg', '35% center'),
     frame('Family', 'Chapter IV', 'A mother’s resolve', 'Through loss, she raised an IPS officer, a professor and a doctor.', 'with-family-small.jpg', '20% center'),
@@ -205,7 +205,7 @@ STORY = f'''
       <img src="assets/img/old-photograph.jpg" alt="Premamma seated by a window, holding a framed black-and-white photograph of her younger self" loading="lazy" style="margin-top:20px">
     </div>
     <div class="timeline">
-      <div class="tl"><p class="yr">1942</p><p class="t">Born in Parumanchala</p><p class="d">Into a poor, oppressed family in Nandikotkur mandal, Kurnool district.</p></div>
+      <div class="tl"><p class="yr">1942</p><p class="t">Born in Parumanchala</p><p class="d">Into a poor, oppressed family in Nandikotkur mandal, Kurnool district.</p><img class="tl-img" src="assets/img/parumanchala-small.jpg" alt="Illustration of village life in 1940s Parumanchala: a family seated outside a tiled mud house" loading="lazy"></div>
       <div class="tl"><p class="yr">Girlhood</p><p class="t">Studying against every odd</p><p class="d">At a time when girls rarely went to school, she kept going through poverty and discrimination.</p></div>
       <div class="tl"><p class="yr">Government service</p><p class="t">A teacher who went door to door</p><p class="d">She found children who weren’t in school and enrolled them, supported her younger brothers’ studies, and taught tuitions.</p><img class="tl-img" src="assets/img/with-children-small.jpg" alt="Premamma reading with two children in a classroom" loading="lazy"></div>
       <div class="tl"><p class="yr">Motherhood</p><p class="t">Through loss, three futures</p><p class="d">A mother of four who lost one child, she raised an IPS officer, a professor and a doctor — and helped neighbours’ children study too.</p><img class="tl-img" src="assets/img/with-family-small.jpg" alt="Premamma laughing with her family" loading="lazy"></div>
